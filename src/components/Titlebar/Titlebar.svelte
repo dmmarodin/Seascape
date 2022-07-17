@@ -1,8 +1,7 @@
 <script lang="ts">
-    import { appWindow } from "@tauri-apps/api/window";
-    import TitlebarControl from "./TitlebarControl.svelte";
     import MenuItem from "./MenuItem.svelte";
     import LogoIcon from "../Layout/LogoIcon.svelte";
+    import Controls from "./Controls.svelte";
 </script>
 
 <nav>
@@ -17,26 +16,7 @@
                 <MenuItem>View</MenuItem>
             </div>
         </div>
-        <div class="controls">
-            <TitlebarControl on:click={appWindow.minimize}>
-                <img
-                    src="https://api.iconify.design/mdi:window-minimize.svg?color=%23999"
-                    alt="minimize"
-                />
-            </TitlebarControl>
-            <TitlebarControl on:click={appWindow.toggleMaximize}>
-                <img
-                    src="https://api.iconify.design/mdi:window-maximize.svg?color=%23999"
-                    alt="maximize"
-                />
-            </TitlebarControl>
-            <TitlebarControl on:click={appWindow.close}>
-                <img
-                    src="https://api.iconify.design/mdi:close.svg?color=%23999"
-                    alt="close"
-                />
-            </TitlebarControl>
-        </div>
+        <Controls />
     </div>
 </nav>
 <div class="spacer" />
@@ -67,10 +47,6 @@
     }
 
     .menu-items {
-        display: flex;
-    }
-
-    .controls {
         display: flex;
     }
 
